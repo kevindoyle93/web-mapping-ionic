@@ -7,8 +7,14 @@ import { NavController } from 'ionic-angular';
 })
 export class LeaguesListPage {
 
-  constructor(public navCtrl: NavController) {
+  leagues: any;
 
+  constructor(public navCtrl: NavController) {
+    this.getLeagues();
+  }
+
+  private getLeagues = () => {
+    this.leagues = ['Premier A', 'Premier B', 'Premier C'];
   }
 
 }

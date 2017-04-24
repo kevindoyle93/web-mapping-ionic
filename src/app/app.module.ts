@@ -10,7 +10,8 @@ import { RefereesListPage } from '../pages/referees-list/referees-list';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { MatchListItem } from '../components/match-list-item/match-list-item';
-import { ClubListItem } from '../components/club-list-item/club-list-item'
+import { ClubListItem } from '../components/club-list-item/club-list-item';
+import { LeaguePreviewCard } from '../components/league-preview-card/league-preview-card';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RefereesListPage,
     TabsPage,
     MatchListItem,
-    ClubListItem
+    ClubListItem,
+    LeaguePreviewCard
   ],
   imports: [
     BrowserModule,
