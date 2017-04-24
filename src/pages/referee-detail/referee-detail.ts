@@ -7,8 +7,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RefereeDetail {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  referee: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.referee = navParams.get('referee');
   }
 
 }

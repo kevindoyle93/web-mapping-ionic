@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {RefereeDetail} from "../referee-detail/referee-detail";
 
 @Component({
   selector: 'page-referees-list',
@@ -15,6 +16,15 @@ export class RefereesListPage {
 
   private getReferees = () => {
     this.referees = ['Ref 1', 'Ref 2', 'Ref 3'];
-  }
+  };
+
+  private onRefClick = (referee: any) => {
+    this.navCtrl.push(
+      RefereeDetail,
+      {
+        referee: referee
+      }
+    );
+  };
 
 }

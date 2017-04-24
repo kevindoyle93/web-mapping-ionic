@@ -8,7 +8,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let ref of referees">
-      <referee-list-item [referee]="ref"></referee-list-item>
+      <referee-list-item [referee]="ref" (click)="onRefClick(ref)"></referee-list-item>
     </ion-item>
   </ion-list>
 </ion-content>
