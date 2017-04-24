@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-league-detail',
@@ -7,8 +7,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LeagueDetail {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  league: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.league = navParams.get('league');
   }
 
 }
