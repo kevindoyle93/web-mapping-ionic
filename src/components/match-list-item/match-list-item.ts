@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MatchListItem {
 
-  @Input() text: string;
+  @Input() match: string;
 
   constructor() {
 
