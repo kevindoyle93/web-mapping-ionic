@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { LeaguesListPage } from '../leagues_list/leaguesList';
+import { ClubsListPage } from '../clubs_list/clubsList';
+import { MatchesListPage } from '../matches_list/matchesList';
+import { RefereesListPage } from '../referees-list/referees-list';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = MatchesListPage;
+  tab2Root = LeaguesListPage;
+  tab3Root = ClubsListPage;
+  tab4Root = RefereesListPage;
 
   constructor() {
 
