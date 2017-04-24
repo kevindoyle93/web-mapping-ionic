@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-leagues-list',
-  templateUrl: 'leagues_list.html'
+  templateUrl: 'leagues-list.html'
 })
 export class LeaguesListPage {
 

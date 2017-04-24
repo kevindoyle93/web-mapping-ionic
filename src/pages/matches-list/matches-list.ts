@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-matches-list',
-  templateUrl: 'matches_list.html'
+  templateUrl: 'matches-list.html'
 })
 export class MatchesListPage {
 

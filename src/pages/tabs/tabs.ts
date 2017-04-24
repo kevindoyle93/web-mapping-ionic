@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { LeaguesListPage } from '../leagues_list/leaguesList';
-import { ClubsListPage } from '../clubs_list/clubsList';
-import { MatchesListPage } from '../matches_list/matchesList';
+import { LeaguesListPage } from '../leagues-list/leagues-list';
+import { ClubsListPage } from '../clubs-list/clubs-list';
+import { MatchesListPage } from '../matches-list/matches-list';
 import { RefereesListPage } from '../referees-list/referees-list';
 
 @Component({

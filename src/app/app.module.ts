@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { LeaguesListPage } from '../pages/leagues_list/leaguesList';
-import { ClubsListPage } from '../pages/clubs_list/clubsList';
-import { MatchesListPage } from '../pages/matches_list/matchesList';
+import { LeaguesListPage } from '../pages/leagues-list/leagues-list';
+import { ClubsListPage } from '../pages/clubs-list/clubs-list';
+import { MatchesListPage } from '../pages/matches-list/matches-list';
 import { RefereesListPage } from '../pages/referees-list/referees-list';
 import { TabsPage } from '../pages/tabs/tabs';
 
