@@ -7,8 +7,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class MatchDetail {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  match: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.match = navParams.get('match');
   }
 
 }
