@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let club of clubs">
-      <club-list-item [club]="club"></club-list-item>
+      <club-list-item [club]="club" (click)="onClubClick(club)"></club-list-item>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -7,8 +7,10 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ClubDetail {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  club: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.club = navParams.get('club');
   }
 
 }
