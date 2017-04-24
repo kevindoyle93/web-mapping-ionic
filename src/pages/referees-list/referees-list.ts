@@ -7,8 +7,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RefereesListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  referees: any;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.getReferees();
+  }
+
+  private getReferees = () => {
+    this.referees = ['Ref 1', 'Ref 2', 'Ref 3'];
   }
 
 }
