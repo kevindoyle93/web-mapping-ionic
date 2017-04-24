@@ -1,0 +1,15 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'match-list-item',
+  templateUrl: 'match-list-item.html'
+})
+export class MatchListItem {
+
+  @Input() text: string;
+
+  constructor() {
+
+  }
+
+}

@@ -7,8 +7,14 @@ import { NavController } from 'ionic-angular';
 })
 export class MatchesListPage {
 
-  constructor(public navCtrl: NavController) {
+  matches: any;
 
+  constructor(public navCtrl: NavController) {
+    this.getMatches();
+  }
+
+  private getMatches = () => {
+    this.matches = ['Match 1', 'Match 2', 'Match 3'];
   }
 
 }
