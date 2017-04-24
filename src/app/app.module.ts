@@ -4,9 +4,13 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { LeaguesListPage } from '../pages/leagues-list/leagues-list';
+import { LeagueDetail } from '../pages/league-detail/league-detail';
 import { ClubsListPage } from '../pages/clubs-list/clubs-list';
+import { ClubDetail } from '../pages/club-detail/club-detail';
 import { MatchesListPage } from '../pages/matches-list/matches-list';
+import { MatchDetail } from  '../pages/match-detail/match-detail';
 import { RefereesListPage } from '../pages/referees-list/referees-list';
+import { RefereeDetail } from '../pages/referee-detail/referee-detail';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { MatchListItem } from '../components/match-list-item/match-list-item';
@@ -21,9 +25,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     LeaguesListPage,
+    LeagueDetail,
     ClubsListPage,
+    ClubDetail,
     MatchesListPage,
+    MatchDetail,
     RefereesListPage,
+    RefereeDetail,
     TabsPage,
     MatchListItem,
     ClubListItem,
@@ -38,9 +46,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     LeaguesListPage,
+    LeagueDetail,
     ClubsListPage,
+    ClubDetail,
     MatchesListPage,
+    MatchDetail,
     RefereesListPage,
+    RefereeDetail,
     TabsPage
   ],
   providers: [
