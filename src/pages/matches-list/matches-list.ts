@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, App, PopoverController } from 'ionic-angular';
-import {MatchDetail} from "../match-detail/match-detail";
-import {MatchService} from "../../api/services/match-service";
-import {LogoutPopover} from "../../components/logout-popover/logout-popover";
-import {LocalStorageService} from "../../providers/local-storage-service";
+import { MatchDetail } from "../match-detail/match-detail";
+import { MatchService } from "../../api/services/match-service";
+import { LogoutPopover } from "../../components/logout-popover/logout-popover";
+import { LocalStorageService } from "../../providers/local-storage-service";
+import { Match } from "../../api/models/match";
+
 
 @Component({
   selector: 'page-matches-list',
@@ -12,22 +14,21 @@ import {LocalStorageService} from "../../providers/local-storage-service";
 })
 export class MatchesListPage {
 
-  matches: any;
+  matches: Match[];
 
   constructor(public navCtrl: NavController, public appCtrl: App, public popoverCtrl: PopoverController, public matchService: MatchService, public localStorage: LocalStorageService) {
     this.getMatches();
   }
 
   private getMatches = () => {
-    this.matches = ['Match 1', 'Match 2', 'Match 3'];
     this.matchService.getMatches(this.localStorage.getToken())
       .subscribe(
-        res => console.log(res),
+        res => this.matches = res,
         err => console.log(err)
       );
   };
 
-  private onMatchClick = (match: any) => {
+  private onMatchClick = (match: Match) => {
     this.navCtrl.push(
       MatchDetail,
       {
