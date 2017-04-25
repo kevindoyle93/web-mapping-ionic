@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LoginPage } from '../pages/login-page/login-page';
 import { LeaguesListPage } from '../pages/leagues-list/leagues-list';
 import { LeagueDetail } from '../pages/league-detail/league-detail';
 import { ClubsListPage } from '../pages/clubs-list/clubs-list';
@@ -25,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     LeaguesListPage,
     LeagueDetail,
     ClubsListPage,
@@ -49,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
     LeaguesListPage,
     LeagueDetail,
     ClubsListPage,
