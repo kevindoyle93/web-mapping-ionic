@@ -2,21 +2,28 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, App, PopoverController } from 'ionic-angular';
 import {RefereeDetail} from "../referee-detail/referee-detail";
 import {LogoutPopover} from "../../components/logout-popover/logout-popover";
+import {RefereeService} from "../../api/services/referee-service";
+import {Referee} from "../../api/models/referee";
 
 @Component({
   selector: 'page-referees-list',
   templateUrl: 'referees-list.html',
+  providers: [RefereeService]
 })
 export class RefereesListPage {
 
-  referees: any;
+  referees: Referee[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public popoverCtrl: PopoverController, public refService: RefereeService) {
     this.getReferees();
   }
 
   private getReferees = () => {
-    this.referees = ['Ref 1', 'Ref 2', 'Ref 3'];
+    this.refService.getReferees()
+      .subscribe(
+        res => this.referees = res,
+        err => console.log(err)
+      );
   };
 
   private onRefClick = (referee: any) => {

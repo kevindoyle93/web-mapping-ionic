@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Referee } from '../../api/models/referee';
 
 @Component({
   selector: 'page-referee-detail',
@@ -7,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RefereeDetail {
 
-  referee: any;
+  referee: Referee;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.referee = navParams.get('referee');

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Referee } from '../../api/models/referee';
 
 @Component({
   selector: 'referee-list-item',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class RefereeListItem {
 
-  @Input() referee: string;
+  @Input() referee: Referee;
 
   constructor() {
 
