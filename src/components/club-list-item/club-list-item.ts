@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Club } from '../../api/models/club';
 
 @Component({
   selector: 'club-list-item',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ClubListItem {
 
-  @Input() club: string;
+  @Input() club: Club;
 
   constructor() {
 

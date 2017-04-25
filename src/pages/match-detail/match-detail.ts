@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Match } from '../../api/models/match';
 
 @Component({
   selector: 'page-match-detail',
@@ -7,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class MatchDetail {
 
-  match: any;
+  match: Match;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.match = navParams.get('match');

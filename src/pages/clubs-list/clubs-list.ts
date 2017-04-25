@@ -2,21 +2,28 @@ import { Component } from '@angular/core';
 import {NavController, App, PopoverController} from 'ionic-angular';
 import {ClubDetail} from "../club-detail/club-detail";
 import {LogoutPopover} from "../../components/logout-popover/logout-popover";
+import {ClubService} from "../../api/services/club-service";
+import {Club} from "../../api/models/club";
 
 @Component({
   selector: 'page-clubs-list',
-  templateUrl: 'clubs-list.html'
+  templateUrl: 'clubs-list.html',
+  providers: [ClubService]
 })
 export class ClubsListPage {
 
-  clubs: any;
+  clubs: Club[];
 
-  constructor(public navCtrl: NavController, public appCtrl: App, public popoverCtrl: PopoverController) {
+  constructor(public navCtrl: NavController, public appCtrl: App, public popoverCtrl: PopoverController, public clubService: ClubService) {
     this.getClubs();
   }
 
   private getClubs = () => {
-    this.clubs = ['Club 1', 'Club 2', 'Club 3'];
+    this.clubService.getClubs()
+      .subscribe(
+        res => this.clubs = res,
+        err => console.log(err)
+      );
   };
 
   private onClubClick = (club: any) => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Club } from '../../api/models/club';
 
 @Component({
   selector: 'page-club-detail',
@@ -7,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ClubDetail {
 
-  club: any;
+  club: Club;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.club = navParams.get('club');
