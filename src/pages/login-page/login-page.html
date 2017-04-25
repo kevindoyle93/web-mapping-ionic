@@ -6,5 +6,7 @@
 
 
 <ion-content padding>
+  <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+  <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
   <button ion-button (click)="onLoginClick()">Login</button>
 </ion-content>
