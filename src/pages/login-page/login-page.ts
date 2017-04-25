@@ -16,7 +16,9 @@ export class LoginPage {
   password: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loginService: LoginService, public localStorage: LocalStorageService) {
-
+    if (localStorage.getToken()) {
+      this.goToMainPage();
+    }
   }
 
   private onLoginClick = () => {
