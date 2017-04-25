@@ -17,6 +17,6 @@ export class LoginService {
     return this.http.post(this.url, {username: username, password: password})
       .map((res: Response) => res.json())
       .catch((error: any) => Observable.throw(error));
-  }
+  };
 
 }

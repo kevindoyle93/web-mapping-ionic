@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App, PopoverController } from 'ionic-angular';
 import {MatchDetail} from "../match-detail/match-detail";
 import {MatchService} from "../../api/services/match-service";
+import {LogoutPopover} from "../../components/logout-popover/logout-popover";
 
 @Component({
   selector: 'page-matches-list',
@@ -12,7 +13,7 @@ export class MatchesListPage {
 
   matches: any;
 
-  constructor(public navCtrl: NavController, public matchService: MatchService) {
+  constructor(public navCtrl: NavController, public appCtrl: App, public popoverCtrl: PopoverController, public matchService: MatchService) {
     this.getMatches();
   }
 
@@ -32,6 +33,17 @@ export class MatchesListPage {
         match: match
       }
     )
+  };
+
+  private presentPopover = (event) => {
+    let popover = this.popoverCtrl.create(LogoutPopover);
+    popover.onDidDismiss((data) => {
+      if (data.loggedOut) {
+        this.appCtrl.getRootNav().popToRoot();
+      }
+    });
+
+    popover.present({ev: event});
   };
 
 }

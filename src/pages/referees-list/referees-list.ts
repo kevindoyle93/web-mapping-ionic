@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App, PopoverController } from 'ionic-angular';
 import {RefereeDetail} from "../referee-detail/referee-detail";
+import {LogoutPopover} from "../../components/logout-popover/logout-popover";
 
 @Component({
   selector: 'page-referees-list',
@@ -10,7 +11,7 @@ export class RefereesListPage {
 
   referees: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public popoverCtrl: PopoverController) {
     this.getReferees();
   }
 
@@ -25,6 +26,17 @@ export class RefereesListPage {
         referee: referee
       }
     );
+  };
+
+  private presentPopover = (event) => {
+    let popover = this.popoverCtrl.create(LogoutPopover);
+    popover.onDidDismiss((data) => {
+      if (data.loggedOut) {
+        this.appCtrl.getRootNav().popToRoot();
+      }
+    });
+
+    popover.present({ev: event});
   };
 
 }
