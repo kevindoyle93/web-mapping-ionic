@@ -3,18 +3,19 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 import { LoginService } from "../../api/services/login-service";
+import { LocalStorageService } from "../../providers/local-storage-service";
 
 @Component({
   selector: 'page-login-page',
   templateUrl: 'login-page.html',
-  providers: [LoginService]
+  providers: [LoginService, LocalStorageService]
 })
 export class LoginPage {
 
   username: string;
   password: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loginService: LoginService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loginService: LoginService, public localStorage: LocalStorageService) {
 
   }
 
@@ -22,8 +23,7 @@ export class LoginPage {
     this.loginService.getToken(this.username, this.password)
       .subscribe(
         res => {
-          // Store token
-          console.log(res.token);
+          this.localStorage.setToken(res.token);
           this.goToMainPage();
         },
         err => console.log(err)
