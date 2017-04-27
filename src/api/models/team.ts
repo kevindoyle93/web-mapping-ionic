@@ -7,10 +7,11 @@ export class Team {
   wins: number;
   draws: number;
   losses: number;
+  numMatches: number;
   points: number;
 
 
-  constructor(url: string, name: string, manager: string, league: string, club: string, wins: number, draws: number, losses: number, points: number) {
+  constructor(url: string, name: string, manager: string, league: string, club: string, wins: number, draws: number, losses: number, numMatches: number, points: number) {
     this.url = url;
     this.name = name;
     this.manager = manager;
@@ -19,6 +20,7 @@ export class Team {
     this.wins = wins;
     this.draws = draws;
     this.losses = losses;
+    this.numMatches = numMatches;
     this.points = points;
   }
 
@@ -32,6 +34,7 @@ export class Team {
       data['num_wins'],
       data['num_draws'],
       data['num_losses'],
+      data['num_matches'],
       data['points']
     );
   };

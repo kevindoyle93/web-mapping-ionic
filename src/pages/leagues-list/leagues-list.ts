@@ -27,6 +27,7 @@ export class LeaguesListPage {
   };
 
   private onLeagueClick = (league: any) => {
+    console.log(league);
     this.navCtrl.push(
       LeagueDetail,
       {
