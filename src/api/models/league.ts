@@ -17,7 +17,7 @@ export class League {
 
   public static fromJson = (data) => {
     let teams: Team[] = [];
-    for (let t of data['teams']) {
+    for (let t of data['ordered_teams']) {
       teams.push(Team.fromJson(t));
     }
 
