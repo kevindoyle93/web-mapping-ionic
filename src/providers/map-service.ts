@@ -26,6 +26,12 @@ export class MapService {
     Leaflet.circle(new LatLng(lat, lng), radius).addTo(this.map);
   };
 
+  public addPolygon = (points: any) => {
+    let polygon = Leaflet.geoJSON(points);
+    polygon.addTo(this.map);
+    return polygon;
+  };
+
   public addMarker = (lat: number, lng: number, markerIcon: any) => {
     let marker = Leaflet.marker(new LatLng(lat, lng), {icon: markerIcon});
     marker.addTo(this.map);

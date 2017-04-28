@@ -21,6 +21,7 @@ import { LeaguePreviewCard } from '../components/league-preview-card/league-prev
 import { RefereeListItem } from '../components/referee-list-item/referee-list-item';
 import { LogoutPopover } from '../components/logout-popover/logout-popover';
 import { ClubhouseMap } from '../components/clubhouse-map/clubhouse-map';
+import { RefereeAvailableArea } from  '../components/referee-availabe-area/referee-available-area';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LeaguePreviewCard,
     RefereeListItem,
     LogoutPopover,
-    ClubhouseMap
+    ClubhouseMap,
+    RefereeAvailableArea
   ],
   imports: [
     BrowserModule,

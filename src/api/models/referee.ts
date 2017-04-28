@@ -18,7 +18,7 @@ export class Referee {
     return new Referee(
       data['id'],
       data['name'],
-      data['phone'],
+      data['phone_number'],
       data['available_area'],
       data['url']
     );
