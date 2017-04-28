@@ -6,5 +6,16 @@
 
 
 <ion-content>
+  <ion-card>
+    <ion-card-header id="secretaryHeader">Secretary</ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <span>Name: {{club.secretary.name}}</span>
+      </ion-item>
+      <ion-item>
+        <span>Phone Number: {{club.secretary.phone}}</span>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
   <clubhouse-map [club]="club"></clubhouse-map>
 </ion-content>

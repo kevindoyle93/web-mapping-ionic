@@ -1,16 +1,19 @@
 import {Pitch} from "./pitch";
+import {Secretary} from "./secretary";
+
+
 export class Club {
   id: number;
   name: string;
   homeColours: string;
   awayColours: string;
-  secretary: string;
+  secretary: Secretary;
   clubhouseLocation: any;
   pitches: Pitch[];
   url: string;
 
 
-  constructor(id: number, name: string, homeColours: string, awayColours: string, secretary: string, clubhouseLocation: any, pitches: Pitch[], url: string) {
+  constructor(id: number, name: string, homeColours: string, awayColours: string, secretary: Secretary, clubhouseLocation: any, pitches: Pitch[], url: string) {
     this.id = id;
     this.name = name;
     this.homeColours = homeColours;
@@ -32,7 +35,7 @@ export class Club {
       data['name'],
       data['home_colours'],
       data['away_colours'],
-      data['secretary'],
+      Secretary.fromJson(data['secretary']),
       data['clubhouse_location'],
       pitches,
       data['url']
