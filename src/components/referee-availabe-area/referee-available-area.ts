@@ -16,8 +16,8 @@ export class RefereeAvailableArea {
   }
 
   ngOnInit() {
-    let availableArea = this.referee.availableArea['coordinates'][0];
-    this.mapService.createMap('map', availableArea[0][1], availableArea[0][0]);
+    let centre = MapService.geoPointToLatLng(this.referee.availableArea['coordinates'][0][0]);
+    this.mapService.createMap('map', centre);
     this.mapService.addPolygon(this.referee.availableArea);
   }
 

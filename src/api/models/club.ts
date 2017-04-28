@@ -25,7 +25,7 @@ export class Club {
       data['home_colours'],
       data['away_colours'],
       data['secretary'],
-      data['clubhouse_location']['coordinates'],
+      data['clubhouse_location'],
       data['url']
     );
   };

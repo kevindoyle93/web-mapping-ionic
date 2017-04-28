@@ -5,13 +5,12 @@ import LatLng = L.LatLng;
 @Injectable()
 export class MapService {
   public map: any;
-  public baseMaps: any;
 
   constructor() {
 
   }
 
-  public createMap = (elementId: string, lat: number, lng: number) => {
+  public createMap = (elementId: string, centre: any) => {
     this.map = Leaflet.map(elementId);
 
     Leaflet.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGF0cmlja3IiLCJhIjoiY2l2aW9lcXlvMDFqdTJvbGI2eXUwc2VjYSJ9.trTzsdDXD2lMJpTfCVsVuA', {
@@ -19,11 +18,13 @@ export class MapService {
       maxZoom: 18
     }).addTo(this.map);
 
-    this.map.setView(new LatLng(lat, lng), 14);
+    this.map.setView(centre, 14);
   };
 
-  public addPoint = (lat: number, lng: number, radius: number) => {
-    Leaflet.circle(new LatLng(lat, lng), radius).addTo(this.map);
+  public addPoint = (point: any, radius: number) => {
+    let centre = Leaflet.geoJSON(point);
+    console.log(centre);
+    Leaflet.circle(point, radius).addTo(this.map);
   };
 
   public addPolygon = (points: any) => {
@@ -32,10 +33,23 @@ export class MapService {
     return polygon;
   };
 
-  public addMarker = (lat: number, lng: number, markerIcon: any) => {
-    let marker = Leaflet.marker(new LatLng(lat, lng), {icon: markerIcon});
+  public addMarker = (location, markerIcon: any) => {
+    let marker = Leaflet.marker(location, {icon: markerIcon});
     marker.addTo(this.map);
     return marker;
+  };
+
+  public static geoPointToLatLng = (point: any) => {
+    let lat, lng;
+    if (point.hasOwnProperty('coordinates')) {
+      lat = point['coordinates'][1];
+      lng = point['coordinates'][0];
+    }
+    else {
+      lat = point[1];
+      lng = point[0];
+    }
+    return [lat, lng];
   };
 
   public static blueMarker = () => {
