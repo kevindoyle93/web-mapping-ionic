@@ -16,8 +16,11 @@ export class ClubhouseMap {
   }
 
   ngOnInit() {
-    this.mapService.createMap('map', this.club.clubhouseLocation[1], this.club.clubhouseLocation[0]);
-    this.mapService.addPoint(this.club.clubhouseLocation[1], this.club.clubhouseLocation[0], 20);
+    let lat = this.club.clubhouseLocation[1];
+    let lng = this.club.clubhouseLocation[0];
+    this.mapService.createMap('map', lat, lng);
+    // this.mapService.addPoint(lat, lng, 20);
+    this.mapService.addMarker(lat, lng);
   }
 
 }

@@ -25,4 +25,10 @@ export class MapService {
   public addPoint = (lat: number, lng: number, radius: number) => {
     Leaflet.circle(new LatLng(lat, lng), radius).addTo(this.map);
   };
+
+  public addMarker = (lat: number, lng: number) => {
+    let marker = Leaflet.marker(new LatLng(lat, lng));
+    marker.addTo(this.map);
+    return marker;
+  }
 }
