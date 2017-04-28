@@ -38,8 +38,10 @@ export class RefereesListPage {
   private presentPopover = (event) => {
     let popover = this.popoverCtrl.create(LogoutPopover);
     popover.onDidDismiss((data) => {
-      if (data.loggedOut) {
-        this.appCtrl.getRootNav().popToRoot();
+      if (data) {
+        if (data.loggedOut) {
+          this.appCtrl.getRootNav().popToRoot();
+        }
       }
     });
 
