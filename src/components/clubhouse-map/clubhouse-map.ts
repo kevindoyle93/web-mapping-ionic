@@ -19,8 +19,7 @@ export class ClubhouseMap {
     let lat = this.club.clubhouseLocation[1];
     let lng = this.club.clubhouseLocation[0];
     this.mapService.createMap('map', lat, lng);
-    // this.mapService.addPoint(lat, lng, 20);
-    this.mapService.addMarker(lat, lng);
+    this.mapService.addMarker(lat, lng, MapService.blueMarker());
   }
 
 }

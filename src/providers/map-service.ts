@@ -26,9 +26,31 @@ export class MapService {
     Leaflet.circle(new LatLng(lat, lng), radius).addTo(this.map);
   };
 
-  public addMarker = (lat: number, lng: number) => {
-    let marker = Leaflet.marker(new LatLng(lat, lng));
+  public addMarker = (lat: number, lng: number, markerIcon: any) => {
+    let marker = Leaflet.marker(new LatLng(lat, lng), {icon: markerIcon});
     marker.addTo(this.map);
     return marker;
-  }
+  };
+
+  public static blueMarker = () => {
+    return Leaflet.icon({
+      iconUrl: 'assets/images/marker-icons/blue/marker-icon-2x.png',
+      shadowUrl: 'assets/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+  };
+
+  public static greenMarker = () => {
+    return Leaflet.icon({
+      iconUrl: 'assets/images/marker-icons/green/marker-icon-2x.png',
+      shadowUrl: 'assets/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+  };
 }
