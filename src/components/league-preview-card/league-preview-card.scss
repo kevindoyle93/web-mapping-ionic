@@ -5,4 +5,21 @@ league-preview-card {
     text-align: center;
   }
 
+  #statsHeaders {
+    color: gray;
+  }
+
+  .stats-row {
+    display: flex;
+    flex-direction: row;
+
+    span {
+      margin: 0 4px;
+    }
+  }
+
+  .team-name {
+    flex-grow: 1;
+  }
+
 }

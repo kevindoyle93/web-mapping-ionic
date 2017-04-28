@@ -1,9 +1,15 @@
 <ion-card>
   <ion-card-header id="leagueName">{{league.name}}</ion-card-header>
   <ion-card-content>
-    <div *ngFor="let team of league.teams; let i = index" [attr.data-index]="i">
+    <div class="stats-row" id="statsHeaders">
+      <span>#</span>
+      <span class="team-name">Team</span>
+      <span>Pl</span>
+      <span>Pts</span>
+    </div>
+    <div class="stats-row" *ngFor="let team of league.teams; let i = index" [attr.data-index]="i">
       <span>{{i + 1}}</span>
-      <span>{{team.name}}</span>
+      <span class="team-name">{{team.name}}</span>
       <span>{{team.numMatches}}</span>
       <span>{{team.points}}</span>
     </div>
