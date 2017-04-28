@@ -6,5 +6,14 @@
 
 
 <ion-content padding>
+  <ion-item>
+    <span>Name: {{referee.name}}</span>
+  </ion-item>
+  <ion-item>
+    <span>Phone Number: {{referee.phone}}</span>
+  </ion-item>
+  <ion-item>
+    <span>Available Area:</span>
+  </ion-item>
   <referee-available-area [referee]="referee"></referee-available-area>
 </ion-content>
