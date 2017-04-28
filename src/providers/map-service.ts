@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
 import * as Leaflet from 'leaflet';
-import LatLng = L.LatLng;
 
 @Injectable()
 export class MapService {
@@ -27,9 +26,14 @@ export class MapService {
     Leaflet.circle(point, radius).addTo(this.map);
   };
 
-  public addPolygon = (points: any) => {
+  public addPolygon = (points: any, goToCentre?: boolean) => {
     let polygon = Leaflet.geoJSON(points);
     polygon.addTo(this.map);
+
+    if (goToCentre) {
+      this.map.setView(polygon.getBounds().getCenter());
+    }
+
     return polygon;
   };
 
