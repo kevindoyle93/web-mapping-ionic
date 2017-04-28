@@ -19,6 +19,10 @@ export class RefereeAvailableArea {
     let centre = MapService.geoPointToLatLng(this.referee.availableArea['coordinates'][0][0]);
     this.mapService.createMap('map', centre);
     this.mapService.addPolygon(this.referee.availableArea, true);
+
+    for (let pitch of this.referee.pitches) {
+      this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+    }
   }
 
 }
