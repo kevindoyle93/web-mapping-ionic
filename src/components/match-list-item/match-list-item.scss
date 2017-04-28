@@ -1,8 +1,25 @@
 match-list-item {
 
   #container {
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+  }
+
+  #homeTeam {
+    width: 40%;
+    max-width: 40%;
+    text-align: left;
+  }
+
+  #awayTeam {
+    width: 40%;
+    max-width: 40%;
+    text-align: right;
+  }
+
+  #scoreContainer {
+    width: 20%;
+    max-width: 20%;
+    text-align: center;
   }
 
 }

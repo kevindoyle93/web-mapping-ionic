@@ -1,7 +1,9 @@
-<div id="container">
-  <span>{{match.homeTeam.name}}</span>
-  <span>{{match.homeGoals}}</span>
-  <span>-</span>
-  <span>{{match.awayGoals}}</span>
-  <span>{{match.awayTeam.name}}</span>
-</div>
+<table id="container">
+  <tr style="width: 100%">
+    <td id="homeTeam">{{match.homeTeam.name}}</td>
+    <td id="scoreContainer">
+      {{match.homeGoals}} - {{match.awayGoals}}
+    </td>
+    <td id="awayTeam">{{match.awayTeam.name}}</td>
+  </tr>
+</table>
