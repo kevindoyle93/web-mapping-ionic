@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MapService } from '../../providers/map-service';
+import {Club} from "../../api/models/club";
 
 @Component({
   selector: 'clubhouse-map',
@@ -8,25 +9,15 @@ import { MapService } from '../../providers/map-service';
 })
 export class ClubhouseMap {
 
+  @Input() club: Club;
+
   constructor(public mapService: MapService) {
 
   }
 
   ngOnInit() {
-    let map = L.map("map");
-
-    let osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    let osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    let osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
-
-    // L.control.zoom({position: "topright"}).addTo(map);
-    // L.control.layers(this.mapService.baseMaps).addTo(map);
-    // L.control.scale().addTo(map);
-
-    map.setView(new L.LatLng(51.3, 0.7),9);
-    map.addLayer(osm);
-
-    this.mapService.map = map;
+    this.mapService.createMap('map', this.club.clubhouseLocation[1], this.club.clubhouseLocation[0]);
+    this.mapService.addPoint(this.club.clubhouseLocation[1], this.club.clubhouseLocation[0], 20);
   }
 
 }
