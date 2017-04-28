@@ -19,6 +19,10 @@ export class ClubhouseMap {
     let centre = MapService.geoPointToLatLng(this.club.clubhouseLocation);
     this.mapService.createMap('map', centre);
     this.mapService.addMarker(centre, MapService.blueMarker());
+
+    for (let pitch of this.club.pitches) {
+      this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+    }
   }
 
 }

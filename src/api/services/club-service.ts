@@ -23,7 +23,7 @@ export class ClubService {
         }
         return clubs;
       })
-      .catch((error: any) => Observable.throw(error.json().error || error));
+      .catch((error: any) => Observable.throw(error));
   };
 
 }
