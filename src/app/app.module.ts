@@ -20,6 +20,7 @@ import { ClubListItem } from '../components/club-list-item/club-list-item';
 import { LeaguePreviewCard } from '../components/league-preview-card/league-preview-card';
 import { RefereeListItem } from '../components/referee-list-item/referee-list-item';
 import { LogoutPopover } from '../components/logout-popover/logout-popover';
+import { ClubhouseMap } from '../components/clubhouse-map/clubhouse-map';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ClubListItem,
     LeaguePreviewCard,
     RefereeListItem,
-    LogoutPopover
+    LogoutPopover,
+    ClubhouseMap
   ],
   imports: [
     BrowserModule,
