@@ -18,10 +18,12 @@ export class ClubhouseMap {
   ngOnInit() {
     let centre = MapService.geoPointToLatLng(this.club.clubhouseLocation);
     this.mapService.createMap('map', centre);
-    this.mapService.addMarker(centre, MapService.blueMarker());
+    let clubhouseMarker = this.mapService.addMarker(centre, MapService.blueMarker());
+    clubhouseMarker.bindPopup(this.club.name + ' Clubhouse');
 
     for (let pitch of this.club.pitches) {
-      this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+      let marker = this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+      marker.bindPopup(pitch.name);
     }
   }
 
