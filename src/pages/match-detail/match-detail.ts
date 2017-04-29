@@ -19,8 +19,11 @@ export class MatchDetail {
 
   ngOnInit() {
     this.geolocation.getCurrentPosition().then((data) => {
-      let point = this.mapService.addPoint([data.coords.latitude, data.coords.longitude], 15);
+      let userLocation = [data.coords.latitude, data.coords.longitude];
+      let point = this.mapService.addPoint(userLocation, 15);
       point.bindPopup('It\'s you!');
+
+      this.mapService.addRoute([userLocation, MapService.geoPointToLatLng(this.match.pitch.location)]);
     });
 
     this.mapService.createMap('map', MapService.geoPointToLatLng(this.match.pitch.location));

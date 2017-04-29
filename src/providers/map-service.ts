@@ -1,5 +1,8 @@
 import {Injectable} from "@angular/core";
 import * as Leaflet from 'leaflet';
+import 'leaflet-routing-machine';
+
+declare var L: any;
 
 @Injectable()
 export class MapService {
@@ -41,6 +44,12 @@ export class MapService {
     let marker = Leaflet.marker(location, {icon: markerIcon});
     marker.addTo(this.map);
     return marker;
+  };
+
+  public addRoute = (routePoints: any[]) => {
+    let route = L.Routing.control({waypoints: routePoints});
+    route.addTo(this.map);
+    return route;
   };
 
   public static geoPointToLatLng = (point: any) => {
