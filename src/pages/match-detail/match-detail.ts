@@ -15,11 +15,17 @@ export class MatchDetail {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation, public  mapService: MapService) {
     this.match = navParams.get('match');
+  }
 
-    geolocation.getCurrentPosition().then((data) => {
-      console.log('My latitude : ', data.coords.latitude);
-      console.log('My longitude: ', data.coords.longitude);
+  ngOnInit() {
+    this.geolocation.getCurrentPosition().then((data) => {
+      let point = this.mapService.addPoint([data.coords.latitude, data.coords.longitude], 15);
+      point.bindPopup('It\'s you!');
     });
+
+    this.mapService.createMap('map', MapService.geoPointToLatLng(this.match.pitch.location));
+    let marker = this.mapService.addMarker(MapService.geoPointToLatLng(this.match.pitch.location), MapService.greenMarker());
+    marker.bindPopup(this.match.pitch.name);
   }
 
 }

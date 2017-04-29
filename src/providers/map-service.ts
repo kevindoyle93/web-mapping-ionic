@@ -21,9 +21,9 @@ export class MapService {
   };
 
   public addPoint = (point: any, radius: number) => {
-    let centre = Leaflet.geoJSON(point);
-    console.log(centre);
-    Leaflet.circle(point, radius).addTo(this.map);
+    let circle = Leaflet.circle(point, radius);
+    circle.addTo(this.map);
+    return circle;
   };
 
   public addPolygon = (points: any, goToCentre?: boolean) => {
