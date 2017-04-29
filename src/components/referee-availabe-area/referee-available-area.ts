@@ -21,7 +21,8 @@ export class RefereeAvailableArea {
     this.mapService.addPolygon(this.referee.availableArea, true);
 
     for (let pitch of this.referee.pitches) {
-      this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+      let marker = this.mapService.addMarker(MapService.geoPointToLatLng(pitch.location), MapService.greenMarker());
+      marker.bindPopup(pitch.name);
     }
   }
 
