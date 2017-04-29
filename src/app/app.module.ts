@@ -5,8 +5,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login-page/login-page';
-import { LeaguesListPage } from '../pages/leagues-list/leagues-list';
-import { LeagueDetail } from '../pages/league-detail/league-detail';
 import { ClubsListPage } from '../pages/clubs-list/clubs-list';
 import { ClubDetail } from '../pages/club-detail/club-detail';
 import { MatchesListPage } from '../pages/matches-list/matches-list';
@@ -17,7 +15,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { MatchListItem } from '../components/match-list-item/match-list-item';
 import { ClubListItem } from '../components/club-list-item/club-list-item';
-import { LeaguePreviewCard } from '../components/league-preview-card/league-preview-card';
 import { RefereeListItem } from '../components/referee-list-item/referee-list-item';
 import { LogoutPopover } from '../components/logout-popover/logout-popover';
 import { ClubhouseMap } from '../components/clubhouse-map/clubhouse-map';
@@ -30,8 +27,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     LoginPage,
-    LeaguesListPage,
-    LeagueDetail,
     ClubsListPage,
     ClubDetail,
     MatchesListPage,
@@ -41,7 +36,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     MatchListItem,
     ClubListItem,
-    LeaguePreviewCard,
     RefereeListItem,
     LogoutPopover,
     ClubhouseMap,
@@ -58,8 +52,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     LoginPage,
-    LeaguesListPage,
-    LeagueDetail,
     ClubsListPage,
     ClubDetail,
     MatchesListPage,
