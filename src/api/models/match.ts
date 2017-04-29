@@ -1,5 +1,6 @@
 import {Team} from "./team";
 import {Pitch} from "./pitch";
+import {Referee} from "./referee";
 
 export class Match {
   url: string;
@@ -11,10 +12,10 @@ export class Match {
   awayGoals: number;
   result: string;
   pitch: Pitch;
-  referee: string;
+  referee: Referee;
 
 
-  constructor(url: string, league: string, homeTeam: Team, awayTeam: Team, date: Date, homeGoals: number, awayGoals: number, result: string, pitch: Pitch, referee: string) {
+  constructor(url: string, league: string, homeTeam: Team, awayTeam: Team, date: Date, homeGoals: number, awayGoals: number, result: string, pitch: Pitch, referee: Referee) {
     this.url = url;
     this.league = league;
     this.homeTeam = homeTeam;
@@ -38,7 +39,7 @@ export class Match {
       data['away_goals'],
       data['result'],
       Pitch.fromJson(data['pitch']),
-      data['referee']
+      Referee.fromJson(data['referee'])
     );
   };
 

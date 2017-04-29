@@ -6,8 +6,12 @@
 
 
 <ion-content padding>
-  {{match.homeTeam.name}} v {{match.awayTeam.name}}
+  <div class="centred">{{match.date | date: 'dd/MM/yyyy'}}</div><br />
+  <match-list-item [match]="match"></match-list-item>
+  <div class="centred"><br />Referee: {{match.referee.name}}</div>
+  <hr />
   <div id="mapContainer">
+    <div id="mapTitle"><h6>Pitch and Directions</h6></div>
     <div id="map"></div>
   </div>
 </ion-content>
